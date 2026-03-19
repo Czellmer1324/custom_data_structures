@@ -1,6 +1,7 @@
 package com.czellmer1324;
 
 import com.czellmer1324.CustomLinkedList.LinkedList;
+import com.czellmer1324.Queue.Queue;
 
 /**
  * Hello world!
@@ -12,6 +13,7 @@ public class Main
     {
         System.out.println( "Hello World!" );
         testLinkedList();
+        testQueue();
     }
 
     static void testLinkedList() {
@@ -60,6 +62,41 @@ public class Main
         IO.println("Size: " + l.size());
         for (Integer i : l) {
             IO.println(i);
+        }
+    }
+
+    static void testQueue() {
+        IO.println();
+        IO.println("Now testing the queue");
+        Queue<String> q = new Queue<>();
+        IO.println("Testing is empty before adding anything");
+        IO.println(q.isEmpty());
+
+        IO.println();
+        IO.println("Testing enqueuing ");
+        q.enqueue("Hello");
+        q.enqueue("What is up");
+        q.enqueue("How is it going");
+        printQueue(q);
+        IO.println("Testing isEmpty after adding stuff");
+        IO.println(q.isEmpty());
+
+        IO.println();
+        IO.println("Testing peek");
+        IO.println("The peek return: " + q.peek());
+        printQueue(q);
+
+        IO.println();
+        IO.println("Testing dequeue");
+        IO.println("The dequeue return: " + q.dequeue());
+        printQueue(q);
+    }
+
+    static void printQueue(Queue<String> q) {
+        IO.println();
+        IO.println("Size: " + q.size());
+        for (String s : q) {
+            IO.println(s);
         }
     }
 }

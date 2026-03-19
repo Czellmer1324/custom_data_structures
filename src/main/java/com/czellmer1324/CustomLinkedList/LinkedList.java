@@ -161,11 +161,6 @@ public class LinkedList<T> implements Iterable<T>{
         Iterable.super.forEach(action);
     }
 
-    @Override
-    public Spliterator<T> spliterator() {
-        return Iterable.super.spliterator();
-    }
-
     private static class ListNode<T> {
         private ListNode<T> nextNode;
         private T value;

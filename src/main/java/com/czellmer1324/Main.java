@@ -2,6 +2,7 @@ package com.czellmer1324;
 
 import com.czellmer1324.CustomLinkedList.LinkedList;
 import com.czellmer1324.Queue.Queue;
+import com.czellmer1324.Stack.Stack;
 
 /**
  * Hello world!
@@ -14,6 +15,7 @@ public class Main
         System.out.println( "Hello World!" );
         testLinkedList();
         testQueue();
+        testStack();
     }
 
     static void testLinkedList() {
@@ -98,5 +100,38 @@ public class Main
         for (String s : q) {
             IO.println(s);
         }
+    }
+
+    static void testStack() {
+        IO.println();
+        IO.println("Now testing the stack");
+        Stack<Integer> s = new Stack<>();
+        IO.println("Testing is empty before adding anything");
+        IO.println(s.isEmpty());
+
+        IO.println();
+        IO.println("Testing pushing ");
+        s.push(1);
+        s.push(2);
+        s.push(3);
+        printStack(s);
+        IO.println("Testing isEmpty after adding stuff");
+        IO.println(s.isEmpty());
+
+        IO.println();
+        IO.println("Testing peek");
+        IO.println("The peek return: " + s.peek());
+        printStack(s);
+
+        IO.println();
+        IO.println("Testing pop");
+        IO.println("The pop return: " + s.pop());
+        printStack(s);
+    }
+
+    static void printStack(Stack<Integer> s) {
+        IO.println();
+        IO.println("Size: " + s.size());
+        s.forEach(IO::println);
     }
 }

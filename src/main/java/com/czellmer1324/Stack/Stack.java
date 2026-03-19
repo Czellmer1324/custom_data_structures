@@ -10,11 +10,7 @@ public class Stack<T> implements Iterable<T>{
     private final LinkedList<T> list = new LinkedList<>();
 
     public void push(T value) {
-        if (isEmpty()) {
-            list.add(value);
-        } else {
-            list.add(value, 0);
-        }
+        list.add(value, 0);
     }
 
     public T peek() {

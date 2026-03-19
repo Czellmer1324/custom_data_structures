@@ -23,10 +23,6 @@ public class LinkedList<T> implements Iterable<T>{
     }
 
     public void add(T value, int index) {
-        if (index < 0 || index > size - 1) {
-            throw new IndexOutOfBoundsException("Index " + index + " is out of bounds for LinkedList with size of " + size);
-        }
-
         if (index == 0) {
             first = new ListNode<>(value, first);
         } else {
@@ -68,6 +64,7 @@ public class LinkedList<T> implements Iterable<T>{
                 prevNode = curNode;
                 curNode = curNode.getNextNode();
             }
+            //TODO: Update the last node if removing at the end
             prevNode.setNextNode(curNode.getNextNode());
             size--;
             return curNode.getValue();

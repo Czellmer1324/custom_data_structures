@@ -18,12 +18,17 @@ public class Main
         IO.println("Testing linked list.");
         IO.println("Testing creation of linked list and normal adding");
         LinkedList<Integer> list = new LinkedList<>();
+
+        IO.println("Testing is empty before adding anything");
+        IO.println(list.isEmpty());
         list.add(1);
         list.add(5);
         list.add(6);
         list.add(7);
 
         printList(list);
+        IO.println("Testing isEmpty after adding values");
+        IO.println(list.isEmpty());
 
         IO.println("Testing adding at a given index");
         list.add(10, 3);

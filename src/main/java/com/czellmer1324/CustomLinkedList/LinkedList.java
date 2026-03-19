@@ -128,6 +128,10 @@ public class LinkedList<T> implements Iterable<T>{
         return size;
     }
 
+    public boolean isEmpty() {
+        return (size == 0);
+    }
+
 
     @Override
     public Iterator<T> iterator() {

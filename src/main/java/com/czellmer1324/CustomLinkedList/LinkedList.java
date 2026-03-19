@@ -108,24 +108,19 @@ public class LinkedList<T> implements Iterable<T>{
             throw new IndexOutOfBoundsException("Index " + index + " is out of bounds for LinkedList with size of " + size);
         }
 
-        ListNode<T> newNode = new ListNode<>(value);
         if (index == 0) {
-            newNode.setNextNode(first.getNextNode());
-            first = newNode;
+            first.setValue(value);
         } else {
             // Skip first as it has already been checked
             ListNode<T> curNode = first.getNextNode();
-            ListNode<T> prevNode = first;
             int counter = 1;
 
             while (counter != index) {
                 counter++;
-                prevNode = curNode;
                 curNode = curNode.getNextNode();
             }
 
-            prevNode.setNextNode(newNode);
-            newNode.setNextNode(curNode.getNextNode());
+            curNode.setValue(value);
         }
     }
 
@@ -165,5 +160,34 @@ public class LinkedList<T> implements Iterable<T>{
     @Override
     public Spliterator<T> spliterator() {
         return Iterable.super.spliterator();
+    }
+
+    private static class ListNode<T> {
+        private ListNode<T> nextNode;
+        private T value;
+        protected ListNode(T value) {
+            this.value = value;
+        }
+
+        protected ListNode(T value, ListNode<T> nextNode) {
+            this.value = value;
+            this.nextNode = nextNode;
+        }
+
+        protected T getValue() {
+            return value;
+        }
+
+        protected void setValue(T value) {
+            this.value = value;
+        }
+
+        protected ListNode<T> getNextNode() {
+            return nextNode;
+        }
+
+        protected void setNextNode(ListNode<T> nextNode) {
+            this.nextNode = nextNode;
+        }
     }
 }

@@ -8,7 +8,7 @@ import com.czellmer1324.CustomLinkedList.LinkedList;
  */
 public class Main
 {
-    public static void main( String[] args )
+    static void main( String[] args )
     {
         System.out.println( "Hello World!" );
         testLinkedList();
@@ -46,7 +46,7 @@ public class Main
         
         IO.println();
         IO.println("Testing set method");
-        list.set(15, 2);
+        list.set(15, 3);
         printList(list);
     }
 

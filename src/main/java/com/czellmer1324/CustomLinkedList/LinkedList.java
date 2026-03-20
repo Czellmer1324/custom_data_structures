@@ -66,6 +66,9 @@ public class LinkedList<T> implements Iterable<T>{
             }
             //TODO: Update the last node if removing at the end
             prevNode.setNextNode(curNode.getNextNode());
+            if (index == size - 1) {
+                last = prevNode;
+            }
             size--;
             return curNode.getValue();
         }

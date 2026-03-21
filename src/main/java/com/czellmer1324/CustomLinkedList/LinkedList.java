@@ -2,7 +2,6 @@ package com.czellmer1324.CustomLinkedList;
 
 import java.util.Iterator;
 import java.util.NoSuchElementException;
-import java.util.Spliterator;
 import java.util.function.Consumer;
 
 public class LinkedList<T> implements Iterable<T>{
@@ -23,6 +22,10 @@ public class LinkedList<T> implements Iterable<T>{
     }
 
     public void add(T value, int index) {
+        if (index < 0 || index > size) {
+            throw new IndexOutOfBoundsException("Index" + index + " is out of bounds for LinkedList with size of " + size);
+        }
+
         if (index == 0) {
             first = new ListNode<>(value, first);
             if (first.nextNode == null) {
@@ -70,7 +73,7 @@ public class LinkedList<T> implements Iterable<T>{
                 prevNode = curNode;
                 curNode = curNode.getNextNode();
             }
-            //TODO: Update the last node if removing at the end
+
             prevNode.setNextNode(curNode.getNextNode());
             if (index == size - 1) {
                 last = prevNode;

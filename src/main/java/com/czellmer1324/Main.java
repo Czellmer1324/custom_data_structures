@@ -23,12 +23,6 @@ public class Main
         IO.println("Testing creation of linked list and normal adding");
         LinkedList<Integer> list = new LinkedList<>();
 
-        list.add(1,0);
-        IO.println(list.getLast());
-
-        list.add(2,1);
-        IO.println(list.getLast());
-
         IO.println("Testing is empty before adding anything");
         IO.println(list.isEmpty());
         list.add(1);

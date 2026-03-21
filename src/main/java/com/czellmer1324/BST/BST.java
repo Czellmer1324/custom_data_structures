@@ -7,10 +7,6 @@ public class BST<T extends Comparable<T>> {
         root = recursiveInsert(root, value);
     }
 
-    private void balance() {
-
-    }
-
     private TreeNode<T> recursiveInsert(TreeNode<T> node, T value) {
         if (node == null) {
             return new TreeNode<>(value);

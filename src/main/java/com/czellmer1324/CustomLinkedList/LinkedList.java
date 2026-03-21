@@ -25,6 +25,9 @@ public class LinkedList<T> implements Iterable<T>{
     public void add(T value, int index) {
         if (index == 0) {
             first = new ListNode<>(value, first);
+            if (first.nextNode == null) {
+                last = first;
+            }
         } else {
             ListNode<T> curNode = first.getNextNode();
             ListNode<T> previousNode = first;
@@ -38,6 +41,9 @@ public class LinkedList<T> implements Iterable<T>{
             ListNode<T> newNode = new ListNode<>(value);
             previousNode.setNextNode(newNode);
             newNode.setNextNode(curNode);
+            if (curNode == null) {
+                last = newNode;
+            }
         }
 
         size++;

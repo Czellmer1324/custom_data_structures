@@ -1,5 +1,6 @@
 package com.czellmer1324;
 
+import com.czellmer1324.BST.BST;
 import com.czellmer1324.CustomLinkedList.LinkedList;
 import com.czellmer1324.Queue.Queue;
 import com.czellmer1324.Stack.Stack;
@@ -16,6 +17,7 @@ public class Main
         testLinkedList();
         testQueue();
         testStack();
+        testTree();
     }
 
     static void testLinkedList() {
@@ -133,5 +135,43 @@ public class Main
         IO.println();
         IO.println("Size: " + s.size());
         s.forEach(IO::println);
+    }
+
+    static void testTree() {
+        IO.println();
+        IO.println("Now testing the tree");
+        BST<Integer> tree = new BST<>();
+        tree.insert(12);
+        tree.insert(20);
+        tree.insert(5);
+        tree.insert(4);
+        tree.insert(2);
+        tree.insert(7);
+        tree.insert(14);
+        tree.insert(13);
+        tree.insert(16);
+        tree.insert(25);
+        tree.insert(23);
+        tree.insert(4);
+        tree.insert(1);
+
+        tree.printTreeInOrder();
+
+        IO.println();
+        IO.println(tree.search(12));
+        IO.println(tree.search(20));
+        IO.println(tree.search(5));
+        IO.println(tree.search(4));
+        IO.println(tree.search(2));
+        IO.println(tree.search(7));
+        IO.println(tree.search(14));
+        IO.println(tree.search(13));
+        IO.println(tree.search(16));
+        IO.println(tree.search(25));
+        IO.println(tree.search(23));
+        IO.println(tree.search(4));
+        IO.println(tree.search(1));
+        IO.println(tree.search(125));
+        IO.println(tree.search(76));
     }
 }
